@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot tests should match the snapsho of the App componentt 1`] = `
+exports[`Snapshot tests should match the snapshot of the App component 1`] = `
 <div>
   <div
     className="main"
@@ -159,6 +159,14 @@ exports[`Snapshot tests should match the snapshot of the Footer component 1`] = 
     </a>
   </div>
 </footer>
+`;
+
+exports[`Snapshot tests should match the snapshot of the LocationRegion component 1`] = `
+<div
+  className="search-results__location-region"
+>
+  Manchester, Greater Manchester, United Kingdom
+</div>
 `;
 
 exports[`Snapshot tests should match the snapshot of the SearchBox component 1`] = `
