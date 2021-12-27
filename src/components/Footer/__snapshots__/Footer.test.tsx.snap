@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test should match the snapshot of the Footer component 1`] = `
+<footer
+  aria-label="Information Footer"
+>
+  <div
+    className="information-footer"
+  >
+    <a
+      data-alt="Linked In Page"
+      href="https://www.linkedin.com/in/nfloros/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <p>
+        Nikolaos Floros
+      </p>
+    </a>
+    <p
+      className="user-information"
+    >
+      Front-End Technical Test
+    </p>
+    <br />
+    <a
+      data-alt="Github Repo Source Code Page"
+      href="https://github.com/Niko-7/search-box-tech-test"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <p>
+        View Source Code
+      </p>
+    </a>
+  </div>
+</footer>
+`;

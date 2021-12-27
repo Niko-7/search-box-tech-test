@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot tests should match the snapshot of the LocationRegion component 1`] = `
+<div
+  className="search-results__location-region"
+>
+  Manchester, Greater Manchester, United Kingdom
+</div>
+`;

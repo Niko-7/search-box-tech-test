@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot tests should match the snapshot of the App component 1`] = `
+<ol
+  aria-label="Search Result List"
+  className="search-results"
+  role="listbox"
+>
+  <li
+    aria-selected="false"
+    className="search-results__item"
+    id="pickupLocationResultsItem-0"
+    role="option"
+  >
+    <div
+      className="search-results__location-type "
+    >
+      <span>
+        
+      </span>
+    </div>
+    <div
+      className="search-result-column"
+    >
+      <div
+        className="search-results__location-name"
+      >
+        Manchester Airport (MAN)
+      </div>
+      <div
+        className="search-results__location-region"
+      >
+        Manchester, Greater Manchester, United Kingdom
+      </div>
+    </div>
+  </li>
+</ol>
+`;

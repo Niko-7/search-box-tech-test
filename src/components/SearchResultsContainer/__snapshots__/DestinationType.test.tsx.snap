@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot tests should match the snapshot of the DestinationType component 1`] = `
+<div
+  className="search-results__location-type "
+>
+  <span>
+    
+  </span>
+</div>
+`;
