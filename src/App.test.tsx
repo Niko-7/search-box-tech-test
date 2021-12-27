@@ -6,7 +6,11 @@ import {
   screen,
 } from "@testing-library/react";
 import { App } from "./App";
-import { DropDown } from "./components/SearchResultsContainer";
+import {
+  DestinationType,
+  DropDown,
+  LocationRegion,
+} from "./components/SearchResultsContainer";
 import { SearchResults } from "./components/SearchResultsContainer/SearchResults";
 import renderer from "react-test-renderer";
 import { SearchBox } from "./components/SearchBox";
@@ -25,7 +29,6 @@ describe("App component", () => {
   });
 });
 describe("SearchResults component", () => {
-
   it("should render the placeholder input", () => {
     render(<SearchResults placeholder={"Pick-up Location"} />);
     const placeholderInput = screen.getByRole("textbox");
@@ -66,6 +69,40 @@ describe("Footer component", () => {
   it("should render Footer component", () => {
     render(<Footer />);
     expect(<Footer />).toBeInTheDocument;
+  });
+});
+
+describe("LocationRegion component", () => {
+  it("should render the region and country in a single string seperated by a comma", () => {
+    render(
+      <LocationRegion
+        region={"Greater Manchester"}
+        country={"United Kingdom"}
+      />
+    );
+    const locationRegion = screen.getByText(
+      "Greater Manchester, United Kingdom"
+    );
+    expect(locationRegion).toBeInTheDocument;
+  });
+});
+describe("DestinationType component", () => {
+  describe("It should return the appropriate type of destination", () => {
+    it("should return City", () => {
+      render(<DestinationType destinationKind={"city-123"} />);
+      const type = screen.getByText("City");
+      expect(type).toBeInTheDocument;
+    });
+    it("should return Airport", () => {
+      render(<DestinationType destinationKind={"airport-123"} />);
+      const type = screen.getByText("Airport");
+      expect(type).toBeInTheDocument;
+    });
+    it("should return Station", () => {
+      render(<DestinationType destinationKind={"station-123"} />);
+      const type = screen.getByText("Station");
+      expect(type).toBeInTheDocument;
+    });
   });
 });
 
