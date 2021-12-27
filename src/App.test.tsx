@@ -78,30 +78,32 @@ describe("LocationRegion component", () => {
       <LocationRegion
         region={"Greater Manchester"}
         country={"United Kingdom"}
+        city={"Manchester"}
       />
     );
     const locationRegion = screen.getByText(
-      "Greater Manchester, United Kingdom"
+      "Manchester, Greater Manchester, United Kingdom"
     );
     expect(locationRegion).toBeInTheDocument;
   });
 });
+
 describe("DestinationType component", () => {
   describe("It should return the appropriate type of destination", () => {
     it("should return City", () => {
       render(<DestinationType destinationKind={"city-123"} />);
-      const type = screen.getByText("City");
-      expect(type).toBeInTheDocument;
+      const typeCity = screen.getByText("City");
+      expect(typeCity).toBeInTheDocument;
     });
     it("should return Airport", () => {
       render(<DestinationType destinationKind={"airport-123"} />);
-      const type = screen.getByText("Airport");
-      expect(type).toBeInTheDocument;
+      const typeAirport = screen.getByText("Airport");
+      expect(typeAirport).toBeInTheDocument;
     });
     it("should return Station", () => {
       render(<DestinationType destinationKind={"station-123"} />);
-      const type = screen.getByText("Station");
-      expect(type).toBeInTheDocument;
+      const typeStation = screen.getByText("Station");
+      expect(typeStation).toBeInTheDocument;
     });
   });
 });
@@ -160,7 +162,7 @@ describe("accesibility tests", () => {
 });
 
 describe("Snapshot tests", () => {
-  it("should match the snapsho of the App componentt", () => {
+  it("should match the snapshot of the App component", () => {
     const tree = renderer.create(<App />).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -176,6 +178,18 @@ describe("Snapshot tests", () => {
   });
   it("should match the snapshot of the Footer component", () => {
     const tree = renderer.create(<Footer />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it("should match the snapshot of the LocationRegion component", () => {
+    const tree = renderer
+      .create(
+        <LocationRegion
+          region={"Greater Manchester"}
+          country={"United Kingdom"}
+          city={"Manchester"}
+        />
+      )
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
