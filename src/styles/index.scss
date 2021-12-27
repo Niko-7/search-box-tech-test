@@ -121,4 +121,73 @@ body {
   flex: 5;
   padding-left: 15px;
 }
+.default-destination-style {
+  background-color: $spanish-blue;
+}
+.orange-destination-style {
+  background-color: $orange;
+  color: $dark-eerie-black;
+}
+.blue-destination-style {
+  background-color: $bright-navy-blue;
+}
 
+ol {
+  display: table;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user-information {
+  display: inline-block;
+  font-weight: $font__weight--input;
+  color: $white;
+}
+
+.information-footer {
+  position: absolute;
+  bottom: 0;
+  background-color: $bright-navy-blue;
+  width: $full__width;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .main {
+    align-items: flex-start;
+    padding-top: 20%;
+  }
+  p {
+    margin: 6px;
+  }
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 901px) {
+  .information-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-information {
+    padding: 0px 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    width: $full__width;
+  }
+}
