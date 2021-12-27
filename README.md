@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+<h1>Search Box app</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [About](#about)
+  - [Built With](#built-with)
+- [Installation](#installation)
+  - [Available scripts](#available-scripts)
+- [Usage](#usage)
+- [Development](#development)
+  - [Testing](#testing)
+  - [Client-Side Performance](#client-side-performance)
+  - [Performance Testing](#performance-testing)
+  - [Accessibility](#accessibility)
 
-In the project directory, you can run:
+## About
 
-### `npm start`
+Replica of the Rentalcars.com Search Box.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Built with
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The following tools and libraries were used
 
-### `npm test`
+[<img src="https://img.shields.io/badge/-ReactJs-blue">](https://reactjs.org/) [<img src="https://img.shields.io/badge/-SASS-purple">](https://sass-lang.com/) [<img src="https://img.shields.io/badge/-React%20Testing%20Library-yellow">](https://testing-library.com/) [<img src="https://img.shields.io/badge/-Jest-green">](https://jestjs.io/) [<img src="https://img.shields.io/badge/-Axios-red">](https://axios-http.com/docs/intro) [<img src="https://img.shields.io/badge/-ESLiint-gray">](https://eslint.org/) [<img src="https://img.shields.io/badge/-Typescript-blue">](https://www.typescriptlang.org/) [<img src="https://img.shields.io/badge/-Jest--Axe-purple">](https://www.npmjs.com/package/jest-axe)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+To run the project locally you need to clone the repository and then run the rest of the commands.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+git clone https://github.com/Niko-7/search-box-tech-test
+cd search-box-app
+npm install
+npm run start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Available scripts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Build the app locally
 
-### `npm run eject`
+```
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Start app on localhost
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm run start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Test with coverage report
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm run test
+```
 
-## Learn More
+### Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Replica of the Rentalcars location search box
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+When entering a single alphanumeric character into the "Pick-up Location" input, the placeholder text disappears, and no search results are displayed.
+
+When entering 2 or more alphanumeric characters into the "Pick-up Location" input, then a list of up to 6 results gets displayed.
+
+When entering a search term in the "Pick-up Location" input that is not recognised e.g. "asdf1234", then a "No results found" message gets displayed.
+
+When truncating the search term leaving only 1 character, then the search results list is no longer displayed.
+
+### Development
+
+This project was developed using [React](https://reactjs.org/). The overall experience of development with using React and it's reusable UI components is better and faster and offer a more stable code.
+
+[Typescript](https://www.typescriptlang.org/) was used for offering a better readability and maintainability to the project.
+
+Styling took place with the help of [Sass](https://sass-lang.com/) in order to make the Search Box look like its live version.
+
+---
+
+#### Testing
+
+Through the development of this project, TDD was applied to every step. Unit tests using Jest and React Testing Library were written to ensure the components behavior and states. Additionally custom hooks were also tested in order to make sure that each usage scenario would still work as expected. Snapshot tests were also added.
+
+---
+
+#### Client-Side Performance
+
+React Hooks were used in order to update state in the input field. When a user enters a location in the input box, the **useEffect** hook has been enhanced with a 500ms timer which only takes the value that will exist at the end of that timer, and will then make an [Axios](https://axios-http.com/docs/intro) request with that value.
+
+---
+
+#### Performance Testing
+
+[Lighthouse audits](https://developers.google.com/web/tools/lighthouse) were run in order to access the quality of the app's performance, accessibility, SEO and more.
+
+<div>
+   <img src="./images/lighthouse_performance.png">
+</div>
+
+---
+
+#### Accessibility
+
+[Jest-Axe](https://www.npmjs.com/package/jest-axe) and [Google Chrome Screen Reader](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) was used to test the accessibility levels of this app.
+
+---
