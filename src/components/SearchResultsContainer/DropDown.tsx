@@ -34,6 +34,7 @@ export const DropDown: React.FC<{ locations: Array<Locations> }> = ({
               <LocationRegion
                 region={location.region}
                 country={location.country}
+                city={location.city}
               />
             </div>
           </li>

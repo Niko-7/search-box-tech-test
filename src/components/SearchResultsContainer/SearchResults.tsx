@@ -20,7 +20,7 @@ export const SearchResults = ({ placeholder }: Props) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const debouncedSearchTerm = UseDebounce({ searchTerm });
   const { data, isLoading } = UseGet(debouncedSearchTerm);
-  
+
   try {
     return (
       <div className="searchbox-main-container">
