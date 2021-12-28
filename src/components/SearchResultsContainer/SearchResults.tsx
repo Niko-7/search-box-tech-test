@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
 import { DropDown } from "./DropDown";
@@ -18,8 +18,13 @@ interface Props {
 
 export const SearchResults = ({ placeholder }: Props) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
   const debouncedSearchTerm = UseDebounce({ searchTerm });
-  const { data, isLoading } = UseGet(debouncedSearchTerm);
+  const { data } = UseGet(debouncedSearchTerm);
+
+  useEffect(() => {
+    setIsLoading(false);
+  }, [data]);
 
   try {
     return (
@@ -43,14 +48,19 @@ export const SearchResults = ({ placeholder }: Props) => {
             aria-label="Pick-up Location"
             onChange={(e) => {
               setSearchTerm(e.target.value);
+              setIsLoading(true);
             }}
           />
-          <ClipLoader
-            css={override}
-            size={15}
-            color={"#1879ca"}
-            loading={isLoading}
-          />
+          {data?.length ? (
+            <ClipLoader
+              css={override}
+              size={15}
+              color={"#1879ca"}
+              loading={isLoading}
+            />
+          ) : (
+            <noscript />
+          )}
         </div>
         {!isLoading && data && <DropDown locations={data} />}
       </div>
