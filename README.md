@@ -56,9 +56,9 @@ Test with coverage report
 npm run test
 ```
 
-### Usage
+---
 
-Replica of the Rentalcars location search box
+### Usage
 
 When entering a single alphanumeric character into the "Pick-up Location" input, the placeholder text disappears, and no search results are displayed.
 
@@ -67,6 +67,8 @@ When entering 2 or more alphanumeric characters into the "Pick-up Location" inpu
 When entering a search term in the "Pick-up Location" input that is not recognised e.g. "asdf1234", then a "No results found" message gets displayed.
 
 When truncating the search term leaving only 1 character, then the search results list is no longer displayed.
+
+---
 
 ### Development
 
