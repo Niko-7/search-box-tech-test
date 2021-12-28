@@ -82,7 +82,7 @@ Styling took place with the help of [Sass](https://sass-lang.com/) in order to m
 
 #### Testing
 
-Through the development of this project, TDD was applied to every step. Unit tests using Jest and React Testing Library were written to ensure the components behavior and states. Additionally custom hooks were also tested in order to make sure that each usage scenario would still work as expected. Snapshot tests were also added.
+Through the development of this project, TDD was applied to every step. Unit tests using Jest and React Testing Library were written to ensure the components functioned properly. Additionally custom hooks were also tested in order to make sure that each usage scenario would still work as expected. Snapshot tests were also added.
 
 ---
 
