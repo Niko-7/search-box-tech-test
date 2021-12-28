@@ -9,9 +9,11 @@
 - [Usage](#usage)
 - [Development](#development)
   - [Testing](#testing)
+  - [QA Testing](#qa-testing)
   - [Client-Side Performance](#client-side-performance)
   - [Performance Testing](#performance-testing)
   - [Accessibility](#accessibility)
+- [Hosting](#hosting)
 
 ## About
 
@@ -82,9 +84,15 @@ Through the development of this project, TDD was applied to every step. Unit tes
 
 ---
 
+#### QA Testing
+
+The [React App Polyfill](https://www.npmjs.com/package/react-app-polyfill) NPM package was installed in order to make sure that IE browsers would support the implemented functionality. The app was tested in IE 11 on Windows 10 and worked as expected.
+
+---
+
 #### Client-Side Performance
 
-React Hooks were used in order to update state in the input field. When a user enters a location in the input box, the **useEffect** hook has been enhanced with a 500ms timer which only takes the value that will exist at the end of that timer, and will then make an [Axios](https://axios-http.com/docs/intro) request with that value.
+React Hooks were used in order to update state in the input field. When a user enters a location in the input box, the **useEffect** hook has been enhanced with a 500ms timer which only takes the value that will exist at the end of that timer(**Debounce**), and will then make an [Axios](https://axios-http.com/docs/intro) request with that value.
 
 ---
 
@@ -101,5 +109,12 @@ React Hooks were used in order to update state in the input field. When a user e
 #### Accessibility
 
 [Jest-Axe](https://www.npmjs.com/package/jest-axe) and [Google Chrome Screen Reader](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) was used to test the accessibility levels of this app.
+
+---
+
+## Hosting
+
+This React app is hosted on [AWS](https://aws.amazon.com/free/?trk=ps_a134p0000078PqeAAE&trkCampaign=acq_paid_search_brand&sc_channel=ps&sc_campaign=acquisition_UK&sc_publisher=google&sc_category=core-main&sc_country=UK&sc_geo=EMEA&sc_outcome=acq&sc_detail=amazon%20web%20services&sc_content=Brand%20Amazon%20Web%20Services_p&sc_matchtype=p&sc_segment=509647298302&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Core-Main|Core|UK|EN|Text|xx|PH&s_kwcid=AL!4422!3!509647298302!p!!g!!amazon%20web%20services&ef_id=CjwKCAiAiKuOBhBQEiwAId_sK1SFHOsBSN2UK3GxMljxallFmdPKFNsEy4z4mcHsyb_5bpFq6Z5HQRoCfzgQAvD_BwE:G:s&s_kwcid=AL!4422!3!509647298302!p!!g!!amazon%20web%20services&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) at https://main.dsozku7c4kvzp.amplifyapp.com/.
+AWS Amplify makes it easy to deploy new changes, as it is linked to the repository of the app. So whenever there is a new commit, a new deployment gets fired automatically as part of the CI/CD services of AWS Amplify.
 
 ---
