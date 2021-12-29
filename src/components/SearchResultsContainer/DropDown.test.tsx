@@ -2,15 +2,15 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { DropDown } from ".";
-const { axe, toHaveNoViolations } = require("jest-axe");
-expect.extend(toHaveNoViolations);
+const { axe } = require("jest-axe");
+import "jest-axe/extend-expect";
 
 afterEach(() => {
   cleanup();
 });
 
 describe("DropDown component", () => {
-  it("should render the listbox and an option", () => {
+  it("should render the listbox", () => {
     render(
       <DropDown
         locations={[
@@ -27,6 +27,22 @@ describe("DropDown component", () => {
     );
     const dropdownList = screen.getByRole("listbox");
     expect(dropdownList).toBeInTheDocument;
+  });
+  it("should render an option", () => {
+    render(
+      <DropDown
+        locations={[
+          {
+            bookingId: "airport-38566",
+            city: "Manchester",
+            country: "United Kingdom",
+            iata: "MAN",
+            name: "Manchester Airport",
+            region: "Greater Manchester",
+          },
+        ]}
+      />
+    );
     const dropdownOption = screen.getByRole("option");
     expect(dropdownOption).toBeInTheDocument;
   });
@@ -50,6 +66,25 @@ describe("accesibility tests", () => {
     );
     const dropdownLabel = screen.getByLabelText("Search Result List");
     expect(dropdownLabel).toBeInTheDocument;
+  });
+
+  it("should have no accesibility errors on the app component", async () => {
+    const { container } = render(
+      <DropDown
+        locations={[
+          {
+            bookingId: "airport-38566",
+            city: "Manchester",
+            country: "United Kingdom",
+            iata: "MAN",
+            name: "Manchester Airport",
+            region: "Greater Manchester",
+          },
+        ]}
+      />
+    );
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
 

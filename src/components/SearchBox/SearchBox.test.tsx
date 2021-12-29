@@ -2,8 +2,8 @@
 import { cleanup, render } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { SearchBox } from ".";
-const { axe, toHaveNoViolations } = require("jest-axe");
-expect.extend(toHaveNoViolations);
+const { axe } = require("jest-axe");
+import "jest-axe/extend-expect";
 
 afterEach(() => {
   cleanup();

@@ -2,8 +2,8 @@
 import { SearchResults } from ".";
 import { cleanup, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
-const { axe, toHaveNoViolations } = require("jest-axe");
-expect.extend(toHaveNoViolations);
+const { axe } = require("jest-axe");
+import "jest-axe/extend-expect";
 
 afterEach(() => {
   cleanup();
