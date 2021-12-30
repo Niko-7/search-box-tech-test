@@ -31,7 +31,7 @@ To run the project locally you need to clone the repository and then run the res
 
 ```sh
 git clone https://github.com/Niko-7/search-box-tech-test
-cd search-box-app
+cd search-box-tech-test
 npm install
 npm run start
 ```
@@ -42,6 +42,12 @@ Build the app locally
 
 ```
 npm run build
+```
+
+Build bundled app with webpack
+
+```
+npm run webpack
 ```
 
 Start app on localhost
