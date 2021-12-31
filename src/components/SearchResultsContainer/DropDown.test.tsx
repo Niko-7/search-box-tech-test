@@ -13,6 +13,7 @@ describe("DropDown component", () => {
   it("should render the listbox", () => {
     render(
       <DropDown
+        parentCallback
         locations={[
           {
             bookingId: "airport-38566",
@@ -31,6 +32,7 @@ describe("DropDown component", () => {
   it("should render an option", () => {
     render(
       <DropDown
+        parentCallback
         locations={[
           {
             bookingId: "airport-38566",
@@ -52,6 +54,7 @@ describe("accesibility tests", () => {
   it("should have a dropdown list label", () => {
     render(
       <DropDown
+        parentCallback
         locations={[
           {
             bookingId: "airport-38566",
@@ -71,6 +74,7 @@ describe("accesibility tests", () => {
   it("should have no accesibility errors on the app component", async () => {
     const { container } = render(
       <DropDown
+        parentCallback
         locations={[
           {
             bookingId: "airport-38566",
@@ -93,6 +97,7 @@ describe("Snapshot tests", () => {
     const tree = renderer
       .create(
         <DropDown
+          parentCallback
           locations={[
             {
               bookingId: "airport-38566",
