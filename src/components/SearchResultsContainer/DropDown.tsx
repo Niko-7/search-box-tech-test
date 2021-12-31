@@ -5,8 +5,7 @@ import { Locations } from "../../types/locationData";
 
 export const DropDown: React.FC<{
   locations: Array<Locations>;
-  parentCallback: any;
-}> = ({ locations, parentCallback }) => {
+}> = ({ locations }) => {
   return (
     <ol
       className="search-results"
@@ -22,10 +21,6 @@ export const DropDown: React.FC<{
             className="search-results__item"
             role="option"
             aria-selected="false"
-            onClick={() => {
-              const newDestination = `${location.name}, ${location.region}, ${location.city}`;
-              parentCallback(newDestination);
-            }}
           >
             {location.bookingId && (
               <DestinationType destinationKind={location.bookingId} />

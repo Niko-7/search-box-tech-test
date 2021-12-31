@@ -21,16 +21,6 @@ export const SearchResults = ({ placeholder }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   const debouncedSearchTerm = UseDebounce({ searchTerm });
   const { data } = UseGet(debouncedSearchTerm);
-  const [chosenDestination, setChosenDestination] = useState<string>("");
-
-  const callback = (newDestination: any) => {
-    setChosenDestination(newDestination);
-    console.log(chosenDestination);
-  };
-
-  useEffect(() => {
-    setIsLoading(false);
-  }, [chosenDestination]);
 
   useEffect(() => {
     setIsLoading(false);
@@ -73,7 +63,7 @@ export const SearchResults = ({ placeholder }: Props) => {
           )}
         </div>
         {!isLoading && data && (
-          <DropDown locations={data} parentCallback={callback} />
+          <DropDown locations={data}/>
         )}
       </div>
     );
