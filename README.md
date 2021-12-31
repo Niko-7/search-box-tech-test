@@ -23,7 +23,7 @@ Replica of the Rentalcars.com Search Box.
 
 The following tools and libraries were used
 
-[<img src="https://img.shields.io/badge/-ReactJs-blue">](https://reactjs.org/) [<img src="https://img.shields.io/badge/-SASS-purple">](https://sass-lang.com/) [<img src="https://img.shields.io/badge/-React%20Testing%20Library-yellow">](https://testing-library.com/) [<img src="https://img.shields.io/badge/-Jest-green">](https://jestjs.io/) [<img src="https://img.shields.io/badge/-Axios-red">](https://axios-http.com/docs/intro) [<img src="https://img.shields.io/badge/-ESLiint-gray">](https://eslint.org/) [<img src="https://img.shields.io/badge/-Typescript-blue">](https://www.typescriptlang.org/) [<img src="https://img.shields.io/badge/-Jest--Axe-purple">](https://www.npmjs.com/package/jest-axe)
+[<img src="https://img.shields.io/badge/-ReactJs-blue">](https://reactjs.org/) [<img src="https://img.shields.io/badge/-SASS-purple">](https://sass-lang.com/) [<img src="https://img.shields.io/badge/-React%20Testing%20Library-yellow">](https://testing-library.com/) [<img src="https://img.shields.io/badge/-Jest-green">](https://jestjs.io/) [<img src="https://img.shields.io/badge/-Axios-red">](https://axios-http.com/docs/intro) [<img src="https://img.shields.io/badge/-ESLiint-gray">](https://eslint.org/) [<img src="https://img.shields.io/badge/-Typescript-blue">](https://www.typescriptlang.org/) [<img src="https://img.shields.io/badge/-Jest--Axe-purple">](https://www.npmjs.com/package/jest-axe) [<img src="https://img.shields.io/badge/-Webpack-yellow">](https://webpack.js.org/)
 
 ### Installation
 
@@ -83,6 +83,8 @@ This project was developed using [React](https://reactjs.org/). The overall expe
 [Typescript](https://www.typescriptlang.org/) was used for offering a better readability and maintainability to the project.
 
 Styling took place with the help of [Sass](https://sass-lang.com/) in order to make the Search Box look like its live version.
+
+[Webpack](https://webpack.js.org/) Is used in order to make a bundled version of the app for production.
 
 ---
 
