@@ -18,7 +18,7 @@ interface Props {
 
 export const SearchResults = ({ placeholder }: Props) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const debouncedSearchTerm = UseDebounce({ searchTerm });
   const { data } = UseGet(debouncedSearchTerm);
 
@@ -62,9 +62,7 @@ export const SearchResults = ({ placeholder }: Props) => {
             <noscript />
           )}
         </div>
-        {!isLoading && data && (
-          <DropDown locations={data}/>
-        )}
+        {!isLoading && data && <DropDown locations={data} />}
       </div>
     );
   } catch (error) {

@@ -9,9 +9,11 @@ export const UseGet = (location: string) => {
 
   useEffect(() => {
     if (location && location.length > 1 && isValidLocation(location)) {
-      axios.get(rentalcarsEndpoint + location).then((response: any) => {
-        setData(response.data.results.docs);
-      });
+      axios
+        .get(rentalcarsEndpoint + location)
+        .then((response: { data: { results: { docs: [] } } }) => {
+          setData(response.data.results.docs);
+        });
     } else if (location.length === 1) {
       setData([]);
     } else {
