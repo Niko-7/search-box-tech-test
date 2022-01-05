@@ -68,7 +68,7 @@ describe("accesibility tests", () => {
     expect(dropdownLabel).toBeInTheDocument;
   });
 
-  it("should have no accesibility errors on the app component", async () => {
+  it("should have no accesibility errors on the DropDown component", async () => {
     const { container } = render(
       <DropDown
         locations={[
@@ -89,7 +89,7 @@ describe("accesibility tests", () => {
 });
 
 describe("Snapshot tests", () => {
-  it("should match the snapshot of the App component", () => {
+  it("should match the snapshot of the DropDown component", () => {
     const tree = renderer
       .create(
         <DropDown
