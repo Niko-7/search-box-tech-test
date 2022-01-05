@@ -95,9 +95,6 @@ body {
   font-size: $font__size;
   line-height: $line__height--results;
 }
-.search-results__location-name:hover {
-  cursor: auto;
-}
 .search-results__location-region {
   font-size: $font__size;
   line-height: $line__height--results;
@@ -175,19 +172,14 @@ a:hover {
   }
 }
 
-@media (min-width: 901px) {
-  .information-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .user-information {
-    padding: 0px 10px;
-  }
-}
-
 @media (max-width: 992px) {
   .main {
     width: $full__width;
+  }
+}
+
+@media (max-height: 800px) {
+  .main {
+    align-items: baseline;
   }
 }
