@@ -22,8 +22,8 @@ export const DropDown: React.FC<{
             role="option"
             aria-selected="false"
           >
-            {location.bookingId && (
-              <DestinationType destinationKind={location.bookingId} />
+            {location.placeType && (
+              <DestinationType destinationKind={location.placeType} />
             )}
             <div className="search-result-column">
               <div className="search-results__location-name">

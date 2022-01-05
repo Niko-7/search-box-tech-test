@@ -7,10 +7,10 @@ export const DestinationType: React.FC<{ destinationKind: string }> = ({
   const [destinationKindClass, setDestinationKindClass] = useState<string>('');
 
   useEffect(() => {
-    if (destinationKind.startsWith('city')) {
+    if (destinationKind.startsWith('C')) {
       setDestination('City');
       setDestinationKindClass('default-destination-style');
-    } else if (destinationKind.startsWith('airport')) {
+    } else if (destinationKind.startsWith('A')) {
       setDestination('Airport');
       setDestinationKindClass('orange-destination-style');
     } else {

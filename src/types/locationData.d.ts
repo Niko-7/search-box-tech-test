@@ -1,5 +1,5 @@
 export interface Locations {
-  bookingId: string;
+  placeType: string;
   name: string;
   region: string;
   country: string;

@@ -15,7 +15,7 @@ describe("DropDown component", () => {
       <DropDown
         locations={[
           {
-            bookingId: "airport-38566",
+            placeType: "A",
             city: "Manchester",
             country: "United Kingdom",
             iata: "MAN",
@@ -33,7 +33,7 @@ describe("DropDown component", () => {
       <DropDown
         locations={[
           {
-            bookingId: "airport-38566",
+            placeType: "A",
             city: "Manchester",
             country: "United Kingdom",
             iata: "MAN",
@@ -54,7 +54,7 @@ describe("accesibility tests", () => {
       <DropDown
         locations={[
           {
-            bookingId: "airport-38566",
+            placeType: "A",
             city: "Manchester",
             country: "United Kingdom",
             iata: "MAN",
@@ -73,7 +73,7 @@ describe("accesibility tests", () => {
       <DropDown
         locations={[
           {
-            bookingId: "airport-38566",
+            placeType: "A",
             city: "Manchester",
             country: "United Kingdom",
             iata: "MAN",
@@ -95,7 +95,7 @@ describe("Snapshot tests", () => {
         <DropDown
           locations={[
             {
-              bookingId: "airport-38566",
+              placeType: "A",
               city: "Manchester",
               country: "United Kingdom",
               iata: "MAN",
