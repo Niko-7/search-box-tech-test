@@ -34,7 +34,6 @@ exports[`Snapshot tests should match the snapshot of the SearchBox component 1`]
         placeholder="Pick-up Location"
         type="text"
       />
-      <noscript />
     </div>
   </div>
 </div>

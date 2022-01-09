@@ -5,6 +5,8 @@ import { css } from "@emotion/react";
 import { DropDown } from "./DropDown";
 import { UseGet } from "../../queries/UseGet";
 import { UseDebounce } from "../../queries/UseDebounce";
+import { isValidLocation } from "../../queries/utils";
+import { Locations } from "../../types/locationData";
 
 const override = css`
   position: absolute;
@@ -20,11 +22,20 @@ export const SearchResults = ({ placeholder }: Props) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const debouncedSearchTerm = UseDebounce({ searchTerm });
-  const { data } = UseGet(debouncedSearchTerm);
+  const [data, setData] = useState<Array<Locations> | null>(null);
 
   useEffect(() => {
-    setIsLoading(false);
-  }, [data]);
+    if (debouncedSearchTerm.length > 1 && isValidLocation) {
+      setIsLoading(true);
+      UseGet(debouncedSearchTerm).then((result: Array<Locations>) => {
+        setIsLoading(false);
+        setData(result);
+      });
+    } else {
+      setData(null);
+      setIsLoading(false);
+    }
+  }, [debouncedSearchTerm]);
 
   try {
     return (
@@ -51,16 +62,12 @@ export const SearchResults = ({ placeholder }: Props) => {
               setIsLoading(true);
             }}
           />
-          {data?.length ? (
-            <ClipLoader
-              css={override}
-              size={15}
-              color={"#1879ca"}
-              loading={isLoading}
-            />
-          ) : (
-            <noscript />
-          )}
+          <ClipLoader
+            css={override}
+            size={15}
+            color={"#1879ca"}
+            loading={isLoading}
+          />
         </div>
         {!isLoading && data && <DropDown locations={data} />}
       </div>
